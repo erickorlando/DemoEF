@@ -1,16 +1,31 @@
-﻿using System.Collections.Generic;
+﻿using Entidades;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using Entidades;
 
 namespace Datos
 {
-    public class EmpresaRepository
+    public class EmpresaRepository : IDisposable
     {
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _contexto?.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
         private readonly DemoBaseDatos _contexto;
 
         public EmpresaRepository()
         {
-            _contexto = new DemoBaseDatos();    
+            _contexto = new DemoBaseDatos();
         }
 
         public List<Empresa> ListarEmpresas()

@@ -31,21 +31,43 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mensajeRespuestaLabel;
             System.Windows.Forms.Label label4;
+            this.LoginBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.cboEmpresa = new System.Windows.Forms.ComboBox();
+            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.LoginBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             mensajeRespuestaLabel = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LoginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mensajeRespuestaLabel
+            // 
+            mensajeRespuestaLabel.AutoSize = true;
+            mensajeRespuestaLabel.Location = new System.Drawing.Point(12, 178);
+            mensajeRespuestaLabel.Name = "mensajeRespuestaLabel";
+            mensajeRespuestaLabel.Size = new System.Drawing.Size(109, 13);
+            mensajeRespuestaLabel.TabIndex = 8;
+            mensajeRespuestaLabel.Text = "Mensaje Respuesta:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.LoginBindingSource, "MensajeRespuesta", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            label4.Location = new System.Drawing.Point(127, 178);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(0, 13);
+            label4.TabIndex = 9;
+            // 
+            // LoginBindingSource
+            // 
+            this.LoginBindingSource.DataSource = typeof(LogicaNegocio.LoginViewModel);
             // 
             // label1
             // 
@@ -68,13 +90,18 @@
             this.cboEmpresa.TabIndex = 1;
             this.cboEmpresa.ValueMember = "Id";
             // 
+            // empresasBindingSource
+            // 
+            this.empresasBindingSource.DataMember = "Empresas";
+            this.empresasBindingSource.DataSource = this.LoginBindingSource;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(40, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Usuario:";
             // 
             // txtUser
@@ -83,7 +110,7 @@
             this.txtUser.Location = new System.Drawing.Point(110, 62);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(213, 22);
-            this.txtUser.TabIndex = 2;
+            this.txtUser.TabIndex = 3;
             // 
             // label3
             // 
@@ -91,7 +118,7 @@
             this.label3.Location = new System.Drawing.Point(40, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 0;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Contraseña:";
             // 
             // txtPass
@@ -101,14 +128,14 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(213, 22);
-            this.txtPass.TabIndex = 2;
+            this.txtPass.TabIndex = 5;
             // 
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(85, 133);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Autenticar";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -119,36 +146,9 @@
             this.btnCancel.Location = new System.Drawing.Point(202, 133);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // LoginBindingSource
-            // 
-            this.LoginBindingSource.DataSource = typeof(LogicaNegocio.LoginViewModel);
-            // 
-            // empresasBindingSource
-            // 
-            this.empresasBindingSource.DataMember = "Empresas";
-            this.empresasBindingSource.DataSource = this.LoginBindingSource;
-            // 
-            // mensajeRespuestaLabel
-            // 
-            mensajeRespuestaLabel.AutoSize = true;
-            mensajeRespuestaLabel.Location = new System.Drawing.Point(82, 178);
-            mensajeRespuestaLabel.Name = "mensajeRespuestaLabel";
-            mensajeRespuestaLabel.Size = new System.Drawing.Size(109, 13);
-            mensajeRespuestaLabel.TabIndex = 8;
-            mensajeRespuestaLabel.Text = "Mensaje Respuesta:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.LoginBindingSource, "MensajeRespuesta", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            label4.Location = new System.Drawing.Point(199, 178);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(0, 13);
-            label4.TabIndex = 8;
             // 
             // LoginForm
             // 

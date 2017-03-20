@@ -13,5 +13,10 @@ namespace Datos
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new DemoBaseDatosInitializer());
+        }
     }
 }

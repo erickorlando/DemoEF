@@ -12,6 +12,8 @@ namespace DemoEF
         {
             InitializeComponent();
 
+            btnCancel.Click += (s, e) => Close();
+
             _viewModel = new LoginViewModel();
 
             LoginBindingSource.DataSource = _viewModel;
