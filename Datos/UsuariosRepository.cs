@@ -1,24 +1,13 @@
-﻿using System;
+﻿using Entidades;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Datos
 {
     public class UsuariosRepository : IDisposable
     {
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _context?.Dispose();
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
         private readonly DemoBaseDatos _context;
 
         public UsuariosRepository()
@@ -34,6 +23,34 @@ namespace Datos
                         select u;
 
             return query.Any();
+        }
+
+        public List<UsuarioInfo> ListarUsuariosPorEmpresa()
+        {
+            try
+            {
+                var query = _context.Database.SqlQuery<UsuarioInfo>("usp_ListarUsuariosByEmpresa");
+                return query.ToList();
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("Ejecutar el archivo de Script 'Procedimiento.sql' en el Servidor de SQL para que se cree el SP");
+                throw;
+            }
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _context?.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

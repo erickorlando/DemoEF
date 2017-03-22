@@ -22,9 +22,23 @@ namespace DemoEF
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            _viewModel.Autenticar();
+            try
+            {
+                var result = _viewModel.Autenticar();
 
-            LoginBindingSource.ResetBindings(false);
+                LoginBindingSource.ResetBindings(false);
+
+                if (!result) return;
+
+                using (var frm = new UsuariosForm())
+                {
+                    frm.ShowDialog(this);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
         }
     }
 }

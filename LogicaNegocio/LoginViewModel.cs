@@ -29,22 +29,26 @@ namespace LogicaNegocio
             }
         }
 
-        public void Autenticar()
+        public bool Autenticar()
         {
             try
             {
-                bool result;
                 using (var dataUsuarios = new UsuariosRepository())
                 {
-                    result = dataUsuarios.ComprobarUsuario(Usuario, Clave, IdEmpresaSeleccionada);
-                }
+                    var result = dataUsuarios.ComprobarUsuario(Usuario, Clave, IdEmpresaSeleccionada);
 
-                MensajeRespuesta = result ? "Login Exitoso!" : "Error en el Usuario o Clave";
+                    MensajeRespuesta = result ? "Login Exitoso!" : "Error en el Usuario o Clave";
+
+                    return result;
+                }
             }
             catch (Exception ex)
             {
                 MensajeRespuesta = ex.Message;
             }
+
+            // Si llega aqui es por algun error.
+            return false;
         }
     }
 }
