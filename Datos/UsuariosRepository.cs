@@ -29,6 +29,8 @@ namespace Datos
         {
             try
             {
+                // Con SqlQuery ayuda a ejecutar SP en la BD y utilizando una clase para mapear el resultado.
+                // Los nombres y los tipos de datos de las columnas deben coincidir con la Clase.
                 var query = _context.Database.SqlQuery<UsuarioInfo>("usp_ListarUsuariosByEmpresa");
                 return query.ToList();
             }

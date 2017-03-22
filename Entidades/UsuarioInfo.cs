@@ -1,5 +1,9 @@
 ﻿namespace Entidades
 {
+    /// <summary>
+    /// Entidad Compleja.
+    /// Representa las columnas a mostrar por un SP que hace un SELECT
+    /// </summary>
     public class UsuarioInfo
     {
         public int IdUsuario { get; set; }

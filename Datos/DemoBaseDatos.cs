@@ -11,6 +11,8 @@ namespace Datos
 
         }
 
+        // Aqui solo se consideran las tablas que debe crear EF Code First.
+
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
 
