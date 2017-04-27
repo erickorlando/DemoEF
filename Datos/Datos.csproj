@@ -52,6 +52,7 @@
     <Compile Include="DemoBaseDatos.cs" />
     <Compile Include="DemoBaseDatosInitializer.cs" />
     <Compile Include="EmpresaRepository.cs" />
+    <Compile Include="GenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuariosRepository.cs" />
   </ItemGroup>
