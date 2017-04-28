@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoEF", "DemoEF\DemoEF.csproj", "{6ADF5871-8D98-4094-8BE9-384C6ECCEAA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{A6852DE3-57D5-4616-BE6D-7C10F65741BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{E0B8BE0E-7B1A-4881-89A4-C78F5CE7000F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatosCodeFirst", "Datos\DatosCodeFirst.csproj", "{E0B8BE0E-7B1A-4881-89A4-C78F5CE7000F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocio", "LogicaNegocio\LogicaNegocio.csproj", "{7A1A3FC3-3052-4AD7-9BE5-4BEFFA7A7F44}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Logica", "03. Logica", "{627FC016-974B-47FA-BD16-BF45092447A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Presentacion", "04. Presentacion", "{09FEB80E-E677-463E-A4D1-F717065567A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatosModelFirst", "DatosModelFirst\DatosModelFirst.csproj", "{3239E132-2656-422B-AFF0-6381804A10E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{7A1A3FC3-3052-4AD7-9BE5-4BEFFA7A7F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A1A3FC3-3052-4AD7-9BE5-4BEFFA7A7F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A1A3FC3-3052-4AD7-9BE5-4BEFFA7A7F44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3239E132-2656-422B-AFF0-6381804A10E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3239E132-2656-422B-AFF0-6381804A10E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3239E132-2656-422B-AFF0-6381804A10E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3239E132-2656-422B-AFF0-6381804A10E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +56,6 @@ Global
 		{A6852DE3-57D5-4616-BE6D-7C10F65741BC} = {55FDB23E-B6D4-45FB-BD47-766FE0B21385}
 		{E0B8BE0E-7B1A-4881-89A4-C78F5CE7000F} = {C8348259-4670-495F-B662-8C5FD78B3463}
 		{7A1A3FC3-3052-4AD7-9BE5-4BEFFA7A7F44} = {627FC016-974B-47FA-BD16-BF45092447A8}
+		{3239E132-2656-422B-AFF0-6381804A10E3} = {C8348259-4670-495F-B662-8C5FD78B3463}
 	EndGlobalSection
 EndGlobal

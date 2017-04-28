@@ -4,21 +4,21 @@ using System.Data.Entity.Migrations;
 
 namespace Datos
 {
-    public class DemoBaseDatosInitializer : CreateDatabaseIfNotExists<DemoBaseDatos>
+    public class DemoBaseDatosInitializer : DropCreateDatabaseIfModelChanges<DemoBaseDatos>
     {
         protected override void Seed(DemoBaseDatos context)
         {
             var empresa01 = new Empresa
             {
                 Ruc = "20549202266",
-                RazonSocial = "Empresa 01",
-                Direccion = "Av. Arequipa 1521"
+                RazonSocial = "Peru .NET Development",
+                Direccion = "Av. Prolongacion Iquitos 1570"
             };
             context.Empresas.AddOrUpdate(empresa => empresa.Id, empresa01, new Empresa
             {
                 Ruc = "20100064673",
-                RazonSocial = "Empresa 02",
-                Direccion = "Av. Peru 3320"
+                RazonSocial = "Microsoft Peru",
+                Direccion = "Av. Jorge Basadre 1344"
             });
 
             context.Usuarios.AddOrUpdate(usuario => usuario.Id,
@@ -33,10 +33,10 @@ namespace Datos
                 new Usuario
                 {
                     Empresa = empresa01,
-                    Nombres = "Pepe",
-                    Apellidos = "Gomez",
-                    NombreUsuario = "pepegomez",
-                    Clave = "pepegomez$"
+                    Nombres = "Milton",
+                    Apellidos = "Baltazar",
+                    NombreUsuario = "milton",
+                    Clave = "perunet"
                 });
         }
     }

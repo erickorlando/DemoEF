@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Datos;
+using DatosModelFirst;
 using Entidades;
 
 namespace LogicaNegocio
@@ -9,7 +11,7 @@ namespace LogicaNegocio
     {
         public string Usuario { get; set; }
         public string Clave { get; set; }
-        public List<Empresa> Empresas { get; set; }
+        public List<Companies> Empresas { get; set; }
         public int IdEmpresaSeleccionada { get; set; }
 
         public string MensajeRespuesta { get; set; }
@@ -18,9 +20,14 @@ namespace LogicaNegocio
         {
             try
             {
-                using (var dataEmpresa = new EmpresaRepository())
+                //using (var dataEmpresa = new EmpresaRepository())
+                //{
+                //    Empresas = dataEmpresa.ListarEmpresas(); // Llenamos el combo.
+                //}
+
+                using (var context = new DemoEFEntities())
                 {
-                    Empresas = dataEmpresa.ListarEmpresas(); // Llenamos el combo.
+                    Empresas = context.Empresas.AsNoTracking().ToList();
                 }
             }
             catch (Exception ex)
